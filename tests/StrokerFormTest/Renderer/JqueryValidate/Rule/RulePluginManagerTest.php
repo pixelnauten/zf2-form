@@ -56,7 +56,7 @@ class RulePluginManagerTest extends \PHPUnit_Framework_TestCase
     public function testValidatePluginSuccess()
     {
         $rule = new NotEmpty();
-        $this->pluginManager->validatePlugin($rule);
+        $this->pluginManager->validate($rule);
     }
 
     /**
@@ -65,6 +65,6 @@ class RulePluginManagerTest extends \PHPUnit_Framework_TestCase
     public function testValidatePluginFails()
     {
         $rule = new StdClass();
-        $this->pluginManager->validatePlugin($rule);
+        $this->pluginManager->validate($rule);
     }
 }

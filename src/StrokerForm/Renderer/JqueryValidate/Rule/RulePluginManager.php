@@ -21,7 +21,6 @@ class RulePluginManager extends AbstractPluginManager
      *
      * @var array
      */
-
     protected $invokableClasses = [
         'between' => 'StrokerForm\Renderer\JqueryValidate\Rule\Between',
         'creditcard' => 'StrokerForm\Renderer\JqueryValidate\Rule\CreditCard',
@@ -46,9 +45,9 @@ class RulePluginManager extends AbstractPluginManager
      *
      * @param null|ConfigInterface $configuration
      */
-    public function __construct(ConfigInterface $configuration = null)
+    public function __construct($configInstanceOrParentLocator = null)
     {
-        parent::__construct($configuration);
+        parent::__construct($configInstanceOrParentLocator);
 
         $this->addInitializer([$this, 'injectTranslator']);
     }
@@ -56,7 +55,7 @@ class RulePluginManager extends AbstractPluginManager
     /**
      * {@inheritDoc}
      */
-    public function validatePlugin($plugin)
+    public function validate($plugin)
     {
         if ($plugin instanceof RuleInterface) {
             // we're okay
@@ -89,5 +88,14 @@ class RulePluginManager extends AbstractPluginManager
                 $rule->setTranslator($locator->get('translator'));
             }
         }
+    }
+
+    public function getRegisteredServices()
+    {
+        return [
+            'invokableClasses' => $this->invokableClasses,
+            'factories' => array_keys($this->factories),
+            'aliases' => array_keys($this->aliases),
+        ];
     }
 }

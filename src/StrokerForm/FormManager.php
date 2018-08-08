@@ -50,7 +50,7 @@ class FormManager extends AbstractPluginManager
      */
     public function get($name, $options = [], $usePeeringServiceManagers = true)
     {
-        $formElementManager = $this->getServiceLocator()->get('FormElementManager');
+        $formElementManager = $this->creationContext->get('FormElementManager');
         if ($formElementManager->has($name)) {
             $form = $formElementManager->get($name);
             if ($form instanceof FormInterface) {

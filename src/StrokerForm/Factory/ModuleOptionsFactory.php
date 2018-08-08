@@ -10,23 +10,17 @@
 
 namespace StrokerForm\Factory;
 
+use Interop\Container\ContainerInterface;
 use RuntimeException;
 use StrokerForm\Options\ModuleOptions;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class ModuleOptionsFactory implements FactoryInterface
+class ModuleOptionsFactory implements \Zend\ServiceManager\Factory\FactoryInterface
 {
-    /**
-     * Create service
-     *
-     * @param  ServiceLocatorInterface $serviceLocator
-     *
-     * @return mixed
-     */
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $options = $serviceLocator->get('Config');
+        $options = $container->get('Config');
         $options = isset($options['stroker_form']) ? $options['stroker_form'] : null;
 
         if (null === $options) {
@@ -35,4 +29,5 @@ class ModuleOptionsFactory implements FactoryInterface
 
         return new ModuleOptions($options);
     }
+
 }

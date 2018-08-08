@@ -12,7 +12,7 @@ namespace StrokerForm\Renderer;
 
 use Zend\Form\ElementInterface;
 use Zend\Form\FormInterface;
-use Zend\Mvc\Router\RouteInterface;
+use Zend\Router\RouteInterface;
 use Zend\Stdlib\AbstractOptions;
 use Zend\View\Renderer\PhpRenderer as View;
 
