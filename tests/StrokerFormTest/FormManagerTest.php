@@ -32,7 +32,7 @@ class FormManagerTest extends \PHPUnit_Framework_TestCase
     public function testIfValidatePluginValidatesCorrect()
     {
         $plugin = \Mockery::mock(FormInterface::class);
-        $this->assertNull($this->manager->validatePlugin($plugin));
+        $this->assertNull($this->manager->validate($plugin));
     }
 
     /**
@@ -42,7 +42,7 @@ class FormManagerTest extends \PHPUnit_Framework_TestCase
     public function testIsValidatePluginValidatesIncorrect()
     {
         $plugin = new \StdClass();
-        $this->manager->validatePlugin($plugin);
+        $this->manager->validate($plugin);
     }
 
     public function testIfFormElementManagerUsed()
