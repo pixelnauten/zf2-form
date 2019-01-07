@@ -72,7 +72,8 @@ abstract class AbstractValidateRenderer extends AbstractRenderer
         $foundValidators = [];
         foreach ($formOrFieldset->getElements() as $element) {
             $validators = $this->getValidatorsForElement($inputFilter, $element);
-            if (count($validators) > 0) {
+
+            if (\is_array($validators) && count($validators) > 0) {
                 $foundValidators[] = [
                     'element'    => $element,
                     'validators' => $validators
