@@ -10,6 +10,7 @@
 
 namespace StrokerForm\Renderer\JqueryValidate\Rule;
 
+use Interop\Container\ContainerInterface;
 use Zend\I18n\Translator\TranslatorAwareInterface;
 use Zend\ServiceManager\AbstractPluginManager;
 use Zend\ServiceManager\ConfigInterface;
@@ -78,14 +79,13 @@ class RulePluginManager extends AbstractPluginManager
      *
      * @return void
      */
-    public function injectTranslator($rule)
+    public function injectTranslator(ContainerInterface $container, $rule)
     {
         if ($rule instanceof TranslatorAwareInterface) {
-            $locator = $this->getServiceLocator();
-            if ($locator && $locator->has('MvcTranslator')) {
-                $rule->setTranslator($locator->get('MvcTranslator'));
-            } elseif ($locator && $locator->has('translator')) {
-                $rule->setTranslator($locator->get('translator'));
+            if ($container->has('MvcTranslator')) {
+                $rule->setTranslator($container->get('MvcTranslator'), 'static');
+            } elseif ($container->has('translator')) {
+                $rule->setTranslator($container->get('translator'), 'static');
             }
         }
     }
