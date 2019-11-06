@@ -51,6 +51,6 @@ class Regex extends AbstractRule
      */
     public function canHandle(ValidatorInterface $validator)
     {
-        return $validator instanceof RegexValidator;
+        return $validator instanceof RegexValidator && !$validator instanceof RuleOnlyRemote;
     }
 }
