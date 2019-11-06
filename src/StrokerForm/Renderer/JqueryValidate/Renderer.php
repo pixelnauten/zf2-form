@@ -15,6 +15,7 @@ use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
 use StrokerForm\Renderer\JqueryValidate\Rule\RulePluginManager;
 use Zend\Form\Element\Email;
 use Zend\Form\ElementInterface;
+use Zend\Form\Fieldset;
 use Zend\Form\FormInterface;
 use Zend\Json\Json;
 use Zend\Validator\EmailAddress;
@@ -156,7 +157,21 @@ class Renderer extends AbstractValidateRenderer
         }
 
         if (count($rules) > 0) {
+            $form = $this->getFormManager()->get($formAlias);
             $elementName = $this->getElementName($element);
+
+            if (!\in_array($elementName, $form->getElements())) {
+                // element in fieldsets nested?!
+                if (count($form->getFieldsets()) > 0) {
+                    foreach ($form->getFieldsets() as $fieldset) {
+                        /** @var Fieldset $fieldset */
+                        if ($fieldset->has($elementName)) {
+                            $elementName = $fieldset->getName().'['.$elementName.']';
+                        }
+                    }
+                }
+            }
+
             $this->addRules($elementName, $rules);
             $this->addMessages($elementName, $messages);
         }
