@@ -10,25 +10,18 @@
 
 namespace StrokerForm\Factory\Renderer\JqueryValidate;
 
+use Interop\Container\ContainerInterface;
 use StrokerForm\Renderer\JqueryValidate\Renderer;
 use StrokerForm\Renderer\JqueryValidate\Rule\RulePluginManager;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class RendererFactory implements FactoryInterface
+class RendererFactory implements \Zend\ServiceManager\Factory\FactoryInterface
 {
-    /**
-     * Create service
-     *
-     * @param ServiceLocatorInterface $serviceLocator
-     *
-     * @return mixed
-     */
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $renderer = new Renderer();
-        $pluginManager = new RulePluginManager();
-        $pluginManager->setServiceLocator($serviceLocator);
+        $pluginManager = new RulePluginManager($container);
         $renderer->setRulePluginManager($pluginManager);
         return $renderer;
     }

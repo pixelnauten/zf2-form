@@ -10,29 +10,22 @@
 
 namespace StrokerForm\Factory;
 
+use Interop\Container\ContainerInterface;
 use StrokerForm\FormManager;
 use StrokerForm\Options\ModuleOptions;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class FormManagerFactory implements FactoryInterface
+class FormManagerFactory implements \Zend\ServiceManager\Factory\FactoryInterface
 {
-    /**
-     * Create service
-     *
-     * @param  ServiceLocatorInterface $serviceLocator
-     *
-     * @return FormManager
-     */
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         /** @var $moduleOptions ModuleOptions */
-        $moduleOptions = $serviceLocator->get(ModuleOptions::class);
+        $moduleOptions = $container->get(ModuleOptions::class);
 
         // init FormManager
-        $manager = new FormManager($moduleOptions->getForms());
-        // add serviceLocator to FormManager
-        $manager->setServiceLocator($serviceLocator);
+        $manager = new FormManager($container);
+        $manager->configure($moduleOptions->getForms()->toArray());
 
         return $manager;
     }

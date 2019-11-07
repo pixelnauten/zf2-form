@@ -60,16 +60,20 @@ class AjaxController extends AbstractActionController
         $filter = $form->getInputFilter();
         $filter->setData($data);
         $filter->setValidationGroup($this->convertDataArrayToValidationGroup($data));
+
         $valid = $filter->isValid();
 
         if (!$valid) {
             $messages = $filter->getMessages();
-
             $result = false;
             array_walk_recursive(
                 $messages, function ($item) use (&$result) {
                     if (is_string($item)) {
-                        $result = $item;
+                        if (!empty($result)) {
+                            $result .=  '<br />' . $item;
+                        } else {
+                            $result = $item;
+                        }
                     }
                 }
             );

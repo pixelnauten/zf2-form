@@ -28,17 +28,9 @@ class Regex extends AbstractRule
     {
         /**@var RegexValidator $validator */
         $pattern = $validator->getPattern();
-        $modifier = '';
+        preg_match('/(.*)[imosxg]{0,}/', $pattern, $matches);
+        return ['regex' => $matches[1]];
 
-        // Only i, m and g modifier are compatible with Ecmascript regexp
-        if (preg_match('/\/(.*)\/([img])?/', $pattern, $matches)) {
-            $pattern = $matches[1];
-            if (isset($matches[2])) {
-                $modifier = $matches[2];
-            }
-        }
-
-        return ['regex' => [$pattern, $modifier]];
     }
 
     /**
@@ -58,6 +50,6 @@ class Regex extends AbstractRule
      */
     public function canHandle(ValidatorInterface $validator)
     {
-        return $validator instanceof RegexValidator;
+        return $validator instanceof RegexValidator && !$validator instanceof RuleOnlyRemote;
     }
 }

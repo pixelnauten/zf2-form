@@ -26,7 +26,7 @@ class FormManager extends AbstractPluginManager
      * @return void
      * @throws \RuntimeException if invalid
      */
-    public function validatePlugin($plugin)
+    public function validate($plugin)
     {
         if ($plugin instanceof FormInterface) {
             // we're okay
@@ -50,7 +50,7 @@ class FormManager extends AbstractPluginManager
      */
     public function get($name, $options = [], $usePeeringServiceManagers = true)
     {
-        $formElementManager = $this->getServiceLocator()->get('FormElementManager');
+        $formElementManager = $this->creationContext->get('FormElementManager');
         if ($formElementManager->has($name)) {
             $form = $formElementManager->get($name);
             if ($form instanceof FormInterface) {

@@ -13,7 +13,7 @@ namespace StrokerForm\Renderer;
 use StrokerForm\FormManager;
 use Zend\I18n\Translator\TranslatorAwareInterface;
 use Zend\I18n\Translator\TranslatorAwareTrait;
-use Zend\Mvc\Router\RouteInterface;
+use Zend\Router\RouteInterface;
 use Zend\Stdlib\AbstractOptions;
 
 abstract class AbstractRenderer implements RendererInterface, TranslatorAwareInterface

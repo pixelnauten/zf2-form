@@ -10,24 +10,17 @@
 
 namespace StrokerForm\Factory;
 
+use Interop\Container\ContainerInterface;
 use StrokerForm\Controller\AjaxController;
 use StrokerForm\FormManager;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class AjaxControllerFactory implements FactoryInterface
+class AjaxControllerFactory implements \Zend\ServiceManager\Factory\FactoryInterface
 {
-    /**
-     * Create service
-     *
-     * @param  ServiceLocatorInterface $serviceLocator
-     *
-     * @return AjaxController
-     */
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $locator = $serviceLocator->getServiceLocator();
-        $formManager = $locator->get(FormManager::class);
+        $formManager = $container->get(FormManager::class);
         $controller = new AjaxController($formManager);
 
         return $controller;
