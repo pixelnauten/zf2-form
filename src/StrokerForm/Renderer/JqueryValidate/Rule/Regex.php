@@ -28,10 +28,9 @@ class Regex extends AbstractRule
     {
         /**@var RegexValidator $validator */
         $pattern = $validator->getPattern();
-
         preg_match('/(.*)[imosxg]{0,}/', $pattern, $matches);
-
         return ['regex' => $matches[1]];
+
     }
 
     /**
