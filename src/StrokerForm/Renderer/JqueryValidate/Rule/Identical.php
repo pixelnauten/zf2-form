@@ -10,9 +10,9 @@
 
 namespace StrokerForm\Renderer\JqueryValidate\Rule;
 
-use Zend\Form\ElementInterface;
-use Zend\Validator\ValidatorInterface;
-use Zend\Validator\Identical as IdenticalValidator;
+use Laminas\Form\ElementInterface;
+use Laminas\Validator\ValidatorInterface;
+use Laminas\Validator\Identical as IdenticalValidator;
 
 class Identical extends AbstractRule
 {

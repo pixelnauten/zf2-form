@@ -14,8 +14,8 @@ namespace StrokerFormTest\Renderer\JqueryValidate\Rule;
 
 use StrokerForm\Renderer\JqueryValidate\Rule\NotEmpty;
 use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
-use Zend\Validator\NotEmpty as ZendEmpty;
-use Zend\Validator\ValidatorInterface;
+use Laminas\Validator\NotEmpty as ZendEmpty;
+use Laminas\Validator\ValidatorInterface;
 
 class NotEmptyTest extends AbstractRuleTest
 {

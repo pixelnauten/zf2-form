@@ -10,17 +10,17 @@
 
 namespace StrokerForm\Renderer\JqueryValidate\Rule;
 
-use Zend\Form\ElementInterface;
-use Zend\Validator\ValidatorInterface;
-use Zend\Validator\InArray as InArrayValidator;
+use Laminas\Form\ElementInterface;
+use Laminas\Validator\ValidatorInterface;
+use Laminas\Validator\InArray as InArrayValidator;
 
 class InArray extends AbstractRule
 {
     /**
      * Get the validation rules
      *
-     * @param  \Zend\Validator\ValidatorInterface $validator
-     * @param \Zend\Form\ElementInterface         $element
+     * @param  \Laminas\Validator\ValidatorInterface $validator
+     * @param \Laminas\Form\ElementInterface         $element
      *
      * @return array
      */
@@ -38,7 +38,7 @@ class InArray extends AbstractRule
     /**
      * Get the validation message
      *
-     * @param  \Zend\Validator\ValidatorInterface $validator
+     * @param  \Laminas\Validator\ValidatorInterface $validator
      *
      * @return string
      */

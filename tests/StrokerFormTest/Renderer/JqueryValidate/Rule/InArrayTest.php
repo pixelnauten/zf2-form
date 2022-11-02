@@ -14,8 +14,8 @@ namespace StrokerFormTest\Renderer\JqueryValidate\Rule;
 
 use StrokerForm\Renderer\JqueryValidate\Rule\InArray;
 use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
-use Zend\Validator\InArray as ZendInArray;
-use Zend\Validator\ValidatorInterface;
+use Laminas\Validator\InArray as ZendInArray;
+use Laminas\Validator\ValidatorInterface;
 
 class InArrayTest extends AbstractRuleTest
 {

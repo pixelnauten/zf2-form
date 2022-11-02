@@ -10,8 +10,8 @@
 
 namespace StrokerForm\Renderer\JqueryValidate\Rule;
 
-use Zend\I18n\Translator\TranslatorInterface;
-use Zend\Validator\AbstractValidator;
+use Laminas\I18n\Translator\TranslatorInterface;
+use Laminas\Validator\AbstractValidator;
 
 abstract class AbstractRule implements RuleInterface
 {
@@ -69,7 +69,7 @@ abstract class AbstractRule implements RuleInterface
     /**
      * Returns translator used in object
      *
-     * @return TranslatorInterface|\Zend\Validator\Translator\TranslatorInterface
+     * @return TranslatorInterface|\Laminas\Validator\Translator\TranslatorInterface
      */
     public function getTranslator()
     {

@@ -10,9 +10,9 @@
 
 namespace StrokerForm\Renderer\JqueryValidate\Rule;
 
-use Zend\I18n\Translator\TranslatorAwareInterface;
-use Zend\ServiceManager\AbstractPluginManager;
-use Zend\ServiceManager\ConfigInterface;
+use Laminas\I18n\Translator\TranslatorAwareInterface;
+use Laminas\ServiceManager\AbstractPluginManager;
+use Laminas\ServiceManager\ConfigInterface;
 
 class RulePluginManager extends AbstractPluginManager
 {

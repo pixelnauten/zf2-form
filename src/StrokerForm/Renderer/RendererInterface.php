@@ -10,11 +10,11 @@
 
 namespace StrokerForm\Renderer;
 
-use Zend\Form\ElementInterface;
-use Zend\Form\FormInterface;
-use Zend\Mvc\Router\RouteInterface;
-use Zend\Stdlib\AbstractOptions;
-use Zend\View\Renderer\PhpRenderer as View;
+use Laminas\Form\ElementInterface;
+use Laminas\Form\FormInterface;
+use Laminas\Mvc\Router\RouteInterface;
+use Laminas\Stdlib\AbstractOptions;
+use Laminas\View\Renderer\PhpRenderer as View;
 
 interface RendererInterface
 {
@@ -23,7 +23,7 @@ interface RendererInterface
      *
      * @param string                   $formAlias
      * @param View                     $view
-     * @param \Zend\Form\FormInterface $form
+     * @param \Laminas\Form\FormInterface $form
      * @param array                    $options
      *
      * @return
@@ -40,7 +40,7 @@ interface RendererInterface
     /**
      * Set the route to use for serving assets
      *
-     * @param  \Zend\Mvc\Router\RouteInterface $route
+     * @param  \Laminas\Mvc\Router\RouteInterface $route
      *
      * @return mixed
      */

@@ -10,9 +10,9 @@
 
 namespace StrokerForm\Renderer\JqueryValidate\Rule;
 
-use Zend\Form\ElementInterface;
-use Zend\Validator\ValidatorInterface;
-use Zend\Validator\Between as BetweenValidator;
+use Laminas\Form\ElementInterface;
+use Laminas\Validator\ValidatorInterface;
+use Laminas\Validator\Between as BetweenValidator;
 
 class Between extends AbstractRule
 {

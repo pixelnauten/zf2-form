@@ -13,18 +13,18 @@
 namespace StrokerFormTest;
 
 use StrokerForm\FormManager;
-use Zend\Form\FormElementManagerFactory;
-use Zend\Form\FormInterface;
-use Zend\ServiceManager\ServiceManager;
+use Laminas\Form\FormElementManagerFactory;
+use Laminas\Form\FormInterface;
+use Laminas\ServiceManager\ServiceManager;
 
-class FormManagerTest extends \PHPUnit_Framework_TestCase
+class FormManagerTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var FormManager
      */
     protected $manager;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->manager = new FormManager();
     }
@@ -35,12 +35,11 @@ class FormManagerTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($this->manager->validatePlugin($plugin));
     }
 
-    /**
-     * @expectedException \RuntimeException
-     * @expectedExceptionMessage Form of type stdClass is invalid; must implement FormInterface
-     */
     public function testIsValidatePluginValidatesIncorrect()
     {
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage('Form of type stdClass is invalid; must implement FormInterface');
+
         $plugin = new \StdClass();
         $this->manager->validatePlugin($plugin);
     }

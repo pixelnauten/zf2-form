@@ -12,8 +12,8 @@ namespace StrokerForm\Factory;
 
 use StrokerForm\Controller\AjaxController;
 use StrokerForm\FormManager;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 
 class AjaxControllerFactory implements FactoryInterface
 {

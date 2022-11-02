@@ -13,7 +13,7 @@ namespace StrokerFormTest\Renderer\JqueryValidate\Rule;
 use PHPUnit\Framework\TestCase;
 use StrokerForm\Renderer\JqueryValidate\Rule\Regex;
 use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
-use Zend\Validator\Regex as RegexValidator;
+use Laminas\Validator\Regex as RegexValidator;
 
 class RegexTest extends TestCase
 {

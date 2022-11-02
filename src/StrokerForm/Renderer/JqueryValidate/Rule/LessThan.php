@@ -10,9 +10,9 @@
 
 namespace StrokerForm\Renderer\JqueryValidate\Rule;
 
-use Zend\Form\ElementInterface;
-use Zend\Validator\ValidatorInterface;
-use Zend\Validator\LessThan as LessThanValidator;
+use Laminas\Form\ElementInterface;
+use Laminas\Validator\ValidatorInterface;
+use Laminas\Validator\LessThan as LessThanValidator;
 
 class LessThan extends AbstractRule
 {

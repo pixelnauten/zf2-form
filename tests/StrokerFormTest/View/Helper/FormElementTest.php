@@ -13,12 +13,12 @@
 namespace StrokerFormTest\Controller;
 
 use Mockery as M;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use StrokerForm\Renderer\RendererInterface;
 use StrokerForm\View\Helper\FormElement;
-use Zend\Form\ElementInterface;
+use Laminas\Form\ElementInterface;
 
-class FormElementTest extends PHPUnit_Framework_TestCase
+class FormElementTest extends \PHPUnit\Framework\TestCase
 {
     public function testRenderInput()
     {

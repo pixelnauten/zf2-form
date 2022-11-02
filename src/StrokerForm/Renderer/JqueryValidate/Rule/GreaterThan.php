@@ -10,9 +10,9 @@
 
 namespace StrokerForm\Renderer\JqueryValidate\Rule;
 
-use Zend\Form\ElementInterface;
-use Zend\Validator\ValidatorInterface;
-use Zend\Validator\GreaterThan as GreaterThanValidator;
+use Laminas\Form\ElementInterface;
+use Laminas\Validator\ValidatorInterface;
+use Laminas\Validator\GreaterThan as GreaterThanValidator;
 
 class GreaterThan extends AbstractRule
 {

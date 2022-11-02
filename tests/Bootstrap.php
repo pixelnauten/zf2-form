@@ -27,7 +27,7 @@ chdir(__DIR__);
 class Bootstrap
 {
     /**
-     * @var \Zend\ServiceManager\ServiceManager
+     * @var \Laminas\ServiceManager\ServiceManager
      */
     protected static $serviceManager;
 

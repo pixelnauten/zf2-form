@@ -10,9 +10,9 @@
 
 namespace StrokerForm\Renderer;
 
-use Zend\Form\ElementInterface;
-use Zend\Form\FormInterface;
-use Zend\View\Renderer\PhpRenderer as View;
+use Laminas\Form\ElementInterface;
+use Laminas\Form\FormInterface;
+use Laminas\View\Renderer\PhpRenderer as View;
 
 class RendererCollection extends AbstractRenderer
 {
@@ -45,8 +45,8 @@ class RendererCollection extends AbstractRenderer
      * Excecuted before the ZF2 view helper renders the element
      *
      * @param  string                          $formAlias
-     * @param  \Zend\View\Renderer\PhpRenderer $view
-     * @param  \Zend\Form\FormInterface        $form
+     * @param  \Laminas\View\Renderer\PhpRenderer $view
+     * @param  \Laminas\Form\FormInterface        $form
      * @param array                            $options
      *
      * @return mixed

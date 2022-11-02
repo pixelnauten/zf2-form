@@ -14,8 +14,8 @@ namespace StrokerFormTest\Renderer\JqueryValidate\Rule;
 
 use StrokerForm\Renderer\JqueryValidate\Rule\Digits;
 use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
-use Zend\Validator\Digits as ZendDigits;
-use Zend\Validator\ValidatorInterface;
+use Laminas\Validator\Digits as ZendDigits;
+use Laminas\Validator\ValidatorInterface;
 
 class DigitsTest extends AbstractRuleTest
 {

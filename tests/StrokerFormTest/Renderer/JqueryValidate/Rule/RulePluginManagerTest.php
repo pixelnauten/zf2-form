@@ -16,17 +16,17 @@ use stdClass;
 use StrokerForm\Renderer\JqueryValidate\Rule\NotEmpty;
 use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
 use StrokerForm\Renderer\JqueryValidate\Rule\RulePluginManager;
-use Zend\I18n\Translator\Translator;
-use Zend\ServiceManager\ServiceManager;
+use Laminas\I18n\Translator\Translator;
+use Laminas\ServiceManager\ServiceManager;
 
-class RulePluginManagerTest extends \PHPUnit_Framework_TestCase
+class RulePluginManagerTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var RulePluginManager
      */
     protected $pluginManager;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->pluginManager = new RulePluginManager();
         $serviceManager = new ServiceManager();
@@ -59,11 +59,10 @@ class RulePluginManagerTest extends \PHPUnit_Framework_TestCase
         $this->pluginManager->validatePlugin($rule);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testValidatePluginFails()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         $rule = new StdClass();
         $this->pluginManager->validatePlugin($rule);
     }

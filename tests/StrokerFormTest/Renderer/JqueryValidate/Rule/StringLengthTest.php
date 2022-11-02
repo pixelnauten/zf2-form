@@ -14,8 +14,8 @@ namespace StrokerFormTest\Renderer\JqueryValidate\Rule;
 
 use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
 use StrokerForm\Renderer\JqueryValidate\Rule\StringLength;
-use Zend\Validator\StringLength as ZendStringLength;
-use Zend\Validator\ValidatorInterface;
+use Laminas\Validator\StringLength as ZendStringLength;
+use Laminas\Validator\ValidatorInterface;
 
 class StringLengthTest extends AbstractRuleTest
 {

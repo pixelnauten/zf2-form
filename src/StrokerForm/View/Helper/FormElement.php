@@ -11,9 +11,9 @@
 namespace StrokerForm\View\Helper;
 
 use StrokerForm\Renderer\RendererInterface;
-use Zend\Form\ElementInterface;
-use Zend\Form\Exception;
-use Zend\Form\View\Helper\FormElement as BaseHelper;
+use Laminas\Form\ElementInterface;
+use Laminas\Form\Exception;
+use Laminas\Form\View\Helper\FormElement as BaseHelper;
 
 class FormElement extends BaseHelper
 {

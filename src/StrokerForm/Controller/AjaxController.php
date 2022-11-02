@@ -11,8 +11,8 @@
 namespace StrokerForm\Controller;
 
 use StrokerForm\FormManager;
-use Zend\Json\Json;
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\Json\Json;
+use Laminas\Mvc\Controller\AbstractActionController;
 
 class AjaxController extends AbstractActionController
 {
@@ -35,11 +35,11 @@ class AjaxController extends AbstractActionController
      * Validate a field and return validation messages on failure
      *
      * @throws \InvalidArgumentException
-     * @return \Zend\Stdlib\ResponseInterface
+     * @return \Laminas\Stdlib\ResponseInterface
      */
     public function validateAction()
     {
-        /** @var $request \Zend\Http\PhpEnvironment\Request */
+        /** @var $request \Laminas\Http\PhpEnvironment\Request */
         $request = $this->getRequest();
         $response = $this->getResponse();
 
@@ -54,7 +54,7 @@ class AjaxController extends AbstractActionController
 
         $formAlias = $this->getEvent()->getRouteMatch()->getParam('form');
 
-        /** @var $form \Zend\Form\FormInterface */
+        /** @var $form \Laminas\Form\FormInterface */
         $form = $this->getFormManager()->get($formAlias);
 
         $filter = $form->getInputFilter();

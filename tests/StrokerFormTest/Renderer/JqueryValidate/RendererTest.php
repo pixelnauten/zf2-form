@@ -18,18 +18,18 @@ use StrokerForm\FormManager;
 use StrokerForm\Renderer\JqueryValidate\Options;
 use StrokerForm\Renderer\JqueryValidate\Renderer;
 use StrokerForm\Renderer\JqueryValidate\Rule\RulePluginManager;
-use Zend\Form\Element;
-use Zend\Form\Element\Email;
-use Zend\Form\Factory;
-use Zend\Form\Fieldset;
-use Zend\Hydrator\ArraySerializable;
-use Zend\I18n\Translator\Translator;
-use Zend\InputFilter\Input;
-use Zend\InputFilter\InputFilter;
-use Zend\Mvc\Router\SimpleRouteStack;
-use Zend\View\Renderer\PhpRenderer;
+use Laminas\Form\Element;
+use Laminas\Form\Element\Email;
+use Laminas\Form\Factory;
+use Laminas\Form\Fieldset;
+use Laminas\Hydrator\ArraySerializable;
+use Laminas\I18n\Translator\Translator;
+use Laminas\InputFilter\Input;
+use Laminas\InputFilter\InputFilter;
+use Laminas\Mvc\Router\SimpleRouteStack;
+use Laminas\View\Renderer\PhpRenderer;
 
-class RendererTest extends \PHPUnit_Framework_TestCase
+class RendererTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var Renderer
@@ -42,12 +42,12 @@ class RendererTest extends \PHPUnit_Framework_TestCase
     private $rendererOptions;
 
     /**
-     * @var \Zend\View\Renderer\PhpRenderer
+     * @var \Laminas\View\Renderer\PhpRenderer
      */
     private $view;
 
     /**
-     * @var MockInterface|\Zend\Mvc\Router\RouteInterface
+     * @var MockInterface|\Laminas\Mvc\Router\RouteInterface
      */
     private $routerMock;
 
@@ -64,7 +64,7 @@ class RendererTest extends \PHPUnit_Framework_TestCase
     /**
      * Setup.
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->formManager = \Mockery::mock(FormManager::class);
         $this->renderer = new Renderer();
@@ -96,12 +96,12 @@ class RendererTest extends \PHPUnit_Framework_TestCase
      * @param string $alias
      * @param string $emailFieldName
      *
-     * @return \Zend\Form\FormInterface
+     * @return \Laminas\Form\FormInterface
      */
     protected function createForm($alias, $emailFieldName = 'email')
     {
         $factory = new Factory();
-        /** @var \Zend\Form\FormInterface $form */
+        /** @var \Laminas\Form\FormInterface $form */
         $form = $factory->createForm(
             [
                 'hydrator' => ArraySerializable::class,
@@ -305,7 +305,7 @@ class RendererTest extends \PHPUnit_Framework_TestCase
         $this->createForm('test');
         $this->renderer->preRenderForm('test', $this->view);
 
-        /** @var $inlineScript \Zend\View\Helper\InlineScript */
+        /** @var $inlineScript \Laminas\View\Helper\InlineScript */
         $inlineScript = $this->view->plugin('inlineScript');
         $jsTagsFound = 0;
         foreach ($inlineScript->getContainer() as $item) {
@@ -629,18 +629,18 @@ class RendererTest extends \PHPUnit_Framework_TestCase
         $explodedString = explode('form[name="test2"]', $inlineString);
         $lastPart = end($explodedString);
 
-        $this->assertNotContains('customEmailName', $lastPart);
+        $this->assertStringNotContainsString('customEmailName', $lastPart);
     }
 
     public function testElementIsSkippedWhenNotFoundInInputFilter()
     {
-        $inputFilterMock = M::mock('Zend\InputFilter\InputFilterInterface');
+        $inputFilterMock = M::mock('Laminas\InputFilter\InputFilterInterface');
         $inputFilterMock
             ->shouldReceive('has')
             ->with('foo')
             ->andReturn(false);
 
-        $elementMock = M::mock('Zend\Form\ElementInterface')
+        $elementMock = M::mock('Laminas\Form\ElementInterface')
             ->shouldDeferMissing();
         $elementMock
             ->shouldReceive('getOption')
@@ -675,7 +675,7 @@ class RendererTest extends \PHPUnit_Framework_TestCase
      */
     protected function getMatchesFromInlineScript()
     {
-        /** @var $inlineScript \Zend\View\Helper\InlineScript */
+        /** @var $inlineScript \Laminas\View\Helper\InlineScript */
         $inlineScript = $this->view->plugin('inlineScript');
         $inlineString = preg_replace(
             '/(\r\n|\r|\n|\t)+/', '', $inlineScript->toString()

@@ -13,7 +13,7 @@
 namespace StrokerFormTest\Renderer\JqueryValidate\Rule;
 
 use StrokerForm\Renderer\JqueryValidate\Rule\Between;
-use Zend\Validator\Between as ZendBetween;
+use Laminas\Validator\Between as ZendBetween;
 
 class BetweenTest extends AbstractRuleTest
 {
