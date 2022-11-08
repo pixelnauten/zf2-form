@@ -11,8 +11,8 @@
 namespace StrokerForm\View\Helper;
 
 use StrokerForm\Renderer\RendererInterface;
-use Zend\Form\FormInterface;
-use Zend\Form\View\Helper\AbstractHelper;
+use Laminas\Form\FormInterface;
+use Laminas\Form\View\Helper\AbstractHelper;
 
 class FormPrepare extends AbstractHelper
 {
@@ -31,7 +31,7 @@ class FormPrepare extends AbstractHelper
 
     /**
      * @param string                   $formAlias
-     * @param \Zend\Form\FormInterface $form
+     * @param \Laminas\Form\FormInterface $form
      * @param array                    $options
      */
     public function __invoke($formAlias, FormInterface $form = null, array $options = [])

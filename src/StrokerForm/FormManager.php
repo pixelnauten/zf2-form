@@ -10,8 +10,8 @@
 
 namespace StrokerForm;
 
-use Zend\Form\FormInterface;
-use Zend\ServiceManager\AbstractPluginManager;
+use Laminas\Form\FormInterface;
+use Laminas\ServiceManager\AbstractPluginManager;
 
 class FormManager extends AbstractPluginManager
 {

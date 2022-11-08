@@ -14,10 +14,10 @@ namespace StrokerForm\Renderer;
 
 use Mockery;
 use StrokerForm\FormManager;
-use Zend\Form\ElementInterface;
-use Zend\View\Renderer\PhpRenderer;
+use Laminas\Form\ElementInterface;
+use Laminas\View\Renderer\PhpRenderer;
 
-class RendererCollectionTest extends \PHPUnit_Framework_TestCase
+class RendererCollectionTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var RendererCollection
@@ -27,7 +27,7 @@ class RendererCollectionTest extends \PHPUnit_Framework_TestCase
     /**
      * Setup.
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->rendererCollection = new RendererCollection(
             $this->createMock(FormManager::class)

@@ -14,15 +14,15 @@ namespace StrokerFormTest\Controller;
 
 use StrokerForm\Controller\AjaxController;
 use StrokerForm\FormManager;
-use Zend\Http\Request;
-use Zend\Http\Response;
-use Zend\Mvc\Controller\AbstractController;
-use Zend\Mvc\MvcEvent;
-use Zend\Mvc\Router\RouteMatch;
-use Zend\Stdlib\RequestInterface;
-use Zend\Stdlib\ResponseInterface;
+use Laminas\Http\Request;
+use Laminas\Http\Response;
+use Laminas\Mvc\Controller\AbstractController;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Mvc\Router\RouteMatch;
+use Laminas\Stdlib\RequestInterface;
+use Laminas\Stdlib\ResponseInterface;
 
-class AjaxControllerTest extends \PHPUnit_Framework_TestCase
+class AjaxControllerTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var AbstractController
@@ -57,7 +57,7 @@ class AjaxControllerTest extends \PHPUnit_Framework_TestCase
     /**
      * Setup.
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->setFormManager(new FormManager());
         $this->controller = new AjaxController($this->getFormManager());
@@ -77,18 +77,17 @@ class AjaxControllerTest extends \PHPUnit_Framework_TestCase
 
     /**
      * testExceptionWhenNoPostDataIsProvided.
-     *
-     * @expectedException \InvalidArgumentException
      */
     public function testExceptionWhenNoPostDataIsProvided()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $this->dispatchAction('validate');
     }
 
     /**
      * @param string $actionName
      *
-     * @return mixed|\Zend\Stdlib\ResponseInterface
+     * @return mixed|\Laminas\Stdlib\ResponseInterface
      */
     protected function dispatchAction($actionName)
     {
@@ -127,7 +126,7 @@ class AjaxControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \Zend\Mvc\Controller\AbstractController
+     * @return \Laminas\Mvc\Controller\AbstractController
      */
     public function getController()
     {
@@ -135,7 +134,7 @@ class AjaxControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param \Zend\Mvc\Controller\AbstractController $controller
+     * @param \Laminas\Mvc\Controller\AbstractController $controller
      */
     public function setController($controller)
     {
@@ -159,7 +158,7 @@ class AjaxControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \Zend\Stdlib\ResponseInterface
+     * @return \Laminas\Stdlib\ResponseInterface
      */
     public function getResponse()
     {
@@ -167,7 +166,7 @@ class AjaxControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param \Zend\Stdlib\ResponseInterface $response
+     * @param \Laminas\Stdlib\ResponseInterface $response
      */
     public function setResponse($response)
     {
@@ -175,7 +174,7 @@ class AjaxControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \Zend\Mvc\Router\RouteMatch
+     * @return \Laminas\Mvc\Router\RouteMatch
      */
     public function getRouteMatch()
     {
@@ -183,7 +182,7 @@ class AjaxControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param \Zend\Mvc\Router\RouteMatch $routeMatch
+     * @param \Laminas\Mvc\Router\RouteMatch $routeMatch
      */
     public function setRouteMatch($routeMatch)
     {
@@ -191,7 +190,7 @@ class AjaxControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \Zend\Mvc\MvcEvent
+     * @return \Laminas\Mvc\MvcEvent
      */
     public function getEvent()
     {
@@ -199,7 +198,7 @@ class AjaxControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param \Zend\Mvc\MvcEvent $event
+     * @param \Laminas\Mvc\MvcEvent $event
      */
     public function setEvent($event)
     {

@@ -13,8 +13,8 @@ namespace StrokerForm\Factory\Renderer\JqueryValidate;
 use Interop\Container\ContainerInterface;
 use StrokerForm\Renderer\JqueryValidate\Renderer;
 use StrokerForm\Renderer\JqueryValidate\Rule\RulePluginManager;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 
 class RendererFactory implements \Zend\ServiceManager\Factory\FactoryInterface
 {

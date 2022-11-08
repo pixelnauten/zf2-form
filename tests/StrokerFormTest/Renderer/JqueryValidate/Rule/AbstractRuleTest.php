@@ -13,12 +13,12 @@
 namespace StrokerFormTest\Renderer\JqueryValidate\Rule;
 
 use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
-use Zend\Form\Element\Text;
-use Zend\Form\ElementInterface;
-use Zend\I18n\Translator\Translator;
-use Zend\Validator\ValidatorInterface;
+use Laminas\Form\Element\Text;
+use Laminas\Form\ElementInterface;
+use Laminas\I18n\Translator\Translator;
+use Laminas\Validator\ValidatorInterface;
 
-abstract class AbstractRuleTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractRuleTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var RuleInterface
@@ -65,7 +65,7 @@ abstract class AbstractRuleTest extends \PHPUnit_Framework_TestCase
     /**
      * Setup test.
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->rule = $this->createRule();
         $this->translatorMock = $this->createMock(Translator::class);
@@ -109,7 +109,7 @@ abstract class AbstractRuleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \Zend\Form\ElementInterface
+     * @return \Laminas\Form\ElementInterface
      */
     public function getElement()
     {

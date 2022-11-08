@@ -14,8 +14,8 @@ namespace StrokerFormTest\Renderer\JqueryValidate\Rule;
 
 use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
 use StrokerForm\Renderer\JqueryValidate\Rule\Uri;
-use Zend\Validator\Uri as ZendUri;
-use Zend\Validator\ValidatorInterface;
+use Laminas\Validator\Uri as ZendUri;
+use Laminas\Validator\ValidatorInterface;
 
 class UriTest extends AbstractRuleTest
 {

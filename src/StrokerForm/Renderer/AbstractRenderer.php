@@ -21,7 +21,7 @@ abstract class AbstractRenderer implements RendererInterface, TranslatorAwareInt
     use TranslatorAwareTrait;
 
     /**
-     * @var \Zend\Mvc\Router\RouteInterface
+     * @var \Laminas\Mvc\Router\RouteInterface
      */
     protected $httpRouter;
 

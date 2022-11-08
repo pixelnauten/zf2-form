@@ -14,8 +14,8 @@ namespace StrokerFormTest\Renderer\JqueryValidate\Rule;
 
 use StrokerForm\Renderer\JqueryValidate\Rule\LessThan;
 use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
-use Zend\Validator\LessThan as ZendLessThan;
-use Zend\Validator\ValidatorInterface;
+use Laminas\Validator\LessThan as ZendLessThan;
+use Laminas\Validator\ValidatorInterface;
 
 class LessThanTest extends AbstractRuleTest
 {

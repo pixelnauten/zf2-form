@@ -13,15 +13,15 @@ namespace StrokerForm\Renderer\JqueryValidate;
 use StrokerForm\Renderer\AbstractValidateRenderer;
 use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
 use StrokerForm\Renderer\JqueryValidate\Rule\RulePluginManager;
-use Zend\Form\Element\Email;
-use Zend\Form\ElementInterface;
-use Zend\Form\Fieldset;
-use Zend\Form\FormInterface;
-use Zend\Json\Json;
-use Zend\Validator\EmailAddress;
-use Zend\Validator\Regex;
-use Zend\Validator\ValidatorInterface;
-use Zend\View\Renderer\PhpRenderer as View;
+use Laminas\Form\Element\Email;
+use Laminas\Form\ElementInterface;
+use Laminas\Form\Fieldset;
+use Laminas\Form\FormInterface;
+use Laminas\Json\Json;
+use Laminas\Validator\EmailAddress;
+use Laminas\Validator\Regex;
+use Laminas\Validator\ValidatorInterface;
+use Laminas\View\Renderer\PhpRenderer as View;
 
 class Renderer extends AbstractValidateRenderer
 {
@@ -68,8 +68,8 @@ class Renderer extends AbstractValidateRenderer
      * Executed before the ZF2 view helper renders the element
      *
      * @param string                          $formAlias
-     * @param \Zend\View\Renderer\PhpRenderer $view
-     * @param \Zend\Form\FormInterface        $form
+     * @param \Laminas\View\Renderer\PhpRenderer $view
+     * @param \Laminas\Form\FormInterface        $form
      * @param array                           $options
      *
      * @return FormInterface
@@ -98,7 +98,7 @@ class Renderer extends AbstractValidateRenderer
     }
 
     /**
-     * @param  \Zend\Form\FormInterface $form
+     * @param  \Laminas\Form\FormInterface $form
      * @param Options                   $options
      *
      * @return string
@@ -125,8 +125,8 @@ class Renderer extends AbstractValidateRenderer
 
     /**
      * @param string                             $formAlias
-     * @param \Zend\Form\ElementInterface        $element
-     * @param \Zend\Validator\ValidatorInterface $validator
+     * @param \Laminas\Form\ElementInterface        $element
+     * @param \Laminas\Validator\ValidatorInterface $validator
      *
      * @return mixed|void
      */
@@ -178,7 +178,7 @@ class Renderer extends AbstractValidateRenderer
     }
 
     /**
-     * @param  \Zend\Validator\ValidatorInterface $validator
+     * @param  \Laminas\Validator\ValidatorInterface $validator
      *
      * @return null|RuleInterface
      */

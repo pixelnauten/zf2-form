@@ -15,8 +15,8 @@ use StrokerForm\FormManager;
 use StrokerForm\Options\ModuleOptions;
 use StrokerForm\Renderer\RendererCollection;
 use StrokerForm\Renderer\RendererInterface;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 
 class RendererFactory implements \Zend\ServiceManager\Factory\FactoryInterface
 {

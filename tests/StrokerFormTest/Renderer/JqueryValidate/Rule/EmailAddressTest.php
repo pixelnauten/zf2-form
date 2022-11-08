@@ -14,8 +14,8 @@ namespace StrokerFormTest\Renderer\JqueryValidate\Rule;
 
 use StrokerForm\Renderer\JqueryValidate\Rule\EmailAddress;
 use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
-use Zend\Validator\EmailAddress as ZendEmailAddress;
-use Zend\Validator\ValidatorInterface;
+use Laminas\Validator\EmailAddress as ZendEmailAddress;
+use Laminas\Validator\ValidatorInterface;
 
 class EmailAddressTest extends AbstractRuleTest
 {

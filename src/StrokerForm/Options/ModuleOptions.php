@@ -11,9 +11,9 @@
 namespace StrokerForm\Options;
 
 use InvalidArgumentException;
-use Zend\ServiceManager\Config;
-use Zend\ServiceManager\ConfigInterface;
-use Zend\Stdlib\AbstractOptions;
+use Laminas\ServiceManager\Config;
+use Laminas\ServiceManager\ConfigInterface;
+use Laminas\Stdlib\AbstractOptions;
 
 class ModuleOptions extends AbstractOptions
 {
@@ -62,7 +62,7 @@ class ModuleOptions extends AbstractOptions
         }
 
         if (!$this->forms instanceof ConfigInterface) {
-            throw new InvalidArgumentException('Plugins argument must be an array or instanceof Zend\ServiceManager\ConfigInterface');
+            throw new InvalidArgumentException('Plugins argument must be an array or instanceof Laminas\ServiceManager\ConfigInterface');
         }
 
         return $this->forms;

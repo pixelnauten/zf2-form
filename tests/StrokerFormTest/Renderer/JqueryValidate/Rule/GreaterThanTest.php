@@ -14,8 +14,8 @@ namespace StrokerFormTest\Renderer\JqueryValidate\Rule;
 
 use StrokerForm\Renderer\JqueryValidate\Rule\GreaterThan;
 use StrokerForm\Renderer\JqueryValidate\Rule\RuleInterface;
-use Zend\Validator\GreaterThan as ZendGreaterThan;
-use Zend\Validator\ValidatorInterface;
+use Laminas\Validator\GreaterThan as ZendGreaterThan;
+use Laminas\Validator\ValidatorInterface;
 
 class GreaterThanTest extends AbstractRuleTest
 {

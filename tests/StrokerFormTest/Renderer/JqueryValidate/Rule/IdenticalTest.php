@@ -13,8 +13,8 @@
 namespace StrokerFormTest\Renderer\JqueryValidate\Rule;
 
 use StrokerForm\Renderer\JqueryValidate\Rule\Identical as IdenticalRule;
-use Zend\Form\Element\Text;
-use Zend\Validator\Identical as IdenticalValidator;
+use Laminas\Form\Element\Text;
+use Laminas\Validator\Identical as IdenticalValidator;
 
 class IdenticalTest extends AbstractRuleTest
 {

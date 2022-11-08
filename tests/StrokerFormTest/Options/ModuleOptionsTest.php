@@ -12,10 +12,10 @@
 
 namespace StrokerFormTest\Controller;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use StrokerForm\Options\ModuleOptions;
 
-class ModuleOptionsTest extends PHPUnit_Framework_TestCase
+class ModuleOptionsTest extends \PHPUnit\Framework\TestCase
 {
     public function testCanSetActiveRenderers()
     {
