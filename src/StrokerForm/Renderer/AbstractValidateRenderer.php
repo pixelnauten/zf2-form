@@ -187,7 +187,7 @@ abstract class AbstractValidateRenderer extends AbstractRenderer
     }
 
     /**
-     * Get the classname of the zend validator
+     * Get the classname of the Laminas validator
      *
      * @param  ValidatorInterface $validator
      *

@@ -11,17 +11,17 @@
 namespace StrokerForm\Renderer;
 
 use StrokerForm\FormManager;
-use Zend\I18n\Translator\TranslatorAwareInterface;
-use Zend\I18n\Translator\TranslatorAwareTrait;
-use Zend\Router\RouteInterface;
-use Zend\Stdlib\AbstractOptions;
+use Laminas\I18n\Translator\TranslatorAwareInterface;
+use Laminas\I18n\Translator\TranslatorAwareTrait;
+use Laminas\Router\RouteInterface;
+use Laminas\Stdlib\AbstractOptions;
 
 abstract class AbstractRenderer implements RendererInterface, TranslatorAwareInterface
 {
     use TranslatorAwareTrait;
 
     /**
-     * @var \Laminas\Mvc\Router\RouteInterface
+     * @var RouteInterface
      */
     protected $httpRouter;
 

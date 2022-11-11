@@ -18,7 +18,7 @@ use StrokerForm\Renderer\RendererInterface;
 use Laminas\ServiceManager\FactoryInterface;
 use Laminas\ServiceManager\ServiceLocatorInterface;
 
-class RendererFactory implements \Zend\ServiceManager\Factory\FactoryInterface
+class RendererFactory implements \Laminas\ServiceManager\Factory\FactoryInterface
 {
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {

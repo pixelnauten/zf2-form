@@ -10,9 +10,9 @@
 
 namespace StrokerForm\Renderer\JqueryValidate\Rule;
 
-use Zend\Form\ElementInterface;
-use Zend\I18n\Translator\TranslatorAwareInterface;
-use Zend\Validator\ValidatorInterface;
+use Laminas\Form\ElementInterface;
+use Laminas\I18n\Translator\TranslatorAwareInterface;
+use Laminas\Validator\ValidatorInterface;
 
 interface RuleOnlyRemote
 {

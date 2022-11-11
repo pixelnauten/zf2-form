@@ -15,7 +15,7 @@ use StrokerForm\View\Helper\FormElement;
 use Laminas\ServiceManager\FactoryInterface;
 use Laminas\ServiceManager\ServiceLocatorInterface;
 
-class FormElementFactory implements \Zend\ServiceManager\Factory\FactoryInterface
+class FormElementFactory implements \Laminas\ServiceManager\Factory\FactoryInterface
 {
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
